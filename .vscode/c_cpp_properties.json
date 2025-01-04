@@ -7,7 +7,7 @@
                 "C:/MinGW/include",
                 "C:/MinGW/lib/gcc/mingw32/6.3.0/include"
             ],
-            "compilerPath": "C:/MinGW/bin/gcc.exe",
+            "compilerPath": null,
             "intelliSenseMode": "windows-gcc-x64",
             "cStandard": "c11",
             "cppStandard": "c++17"

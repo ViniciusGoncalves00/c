@@ -1,32 +1,36 @@
 #include <stdio.h>
 #include "functions.h"
+#include "data_structures/stack.h"
+ 
+int main ()
+{
+    struct Stack myStack;
+    initStack(&myStack);
 
-int main() {
-    int array_size;
+    push(&myStack, 10);
+    push(&myStack, 20);
+    push(&myStack, 30);
+    push(&myStack, 40);
+    push(&myStack, 50);
+    push(&myStack, 60);
+    push(&myStack, 70);
+    push(&myStack, 80);
+    push(&myStack, 90);
+    push(&myStack, 100);
 
-    printf("Digit the array size:");
-    scanf("%d", &array_size);
-
-    int array[array_size];
-
-    for (int i = 0; i < array_size; i++) {
-        array[i] = 0;
+    for (int i = 0; i < myStack.length; i++)
+    {
+        printf("Index: %d, value %d: \n", i, myStack.array[i]);
     }
 
-    printf("Digit %d elements of array:\n", array_size);
-    for (int i = 0; i < array_size; i++) {
-        printf("Element %d: ", i);
-        scanf("%d", &array[i]);
-    }
+    printf("Pop: %d: \n", pop(&myStack));
+    printf("Pop: %d: \n", pop(&myStack));
+    printf("Peek: %d: \n", peek(&myStack));
 
-    if (array_size > 0) {
-        for (int i = 0; i < array_size; i++) {
-            printf("Value in index 0: %d\n", array[i]);
-        }
+    for (int i = 0; i < myStack.length; i++)
+    {
+        printf("Index: %d, value %d: \n", i, myStack.array[i]);
     }
-    else {
-        printf("Empty array.\n");
-    }
-
-    return 0;
+ 
+  return 0;
 }
