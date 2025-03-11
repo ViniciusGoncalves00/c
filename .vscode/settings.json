@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "functions.h": "c",
-        "type_traits": "c"
-    },
-    "C_Cpp.default.compilerPath": "C:\\MinGW\\bin\\gcc.exe"
-}
