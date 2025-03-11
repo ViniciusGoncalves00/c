@@ -1,36 +1,24 @@
 #include <stdio.h>
 #include "functions.h"
 #include "data_structures/stack.h"
+#include "data_structures/dynamic_array.h"
  
 int main ()
 {
-    struct Stack myStack;
-    initStack(&myStack);
+    struct DynamicArray dynamicArray;
+    InitDynamicArray(&dynamicArray);
 
-    push(&myStack, 10);
-    push(&myStack, 20);
-    push(&myStack, 30);
-    push(&myStack, 40);
-    push(&myStack, 50);
-    push(&myStack, 60);
-    push(&myStack, 70);
-    push(&myStack, 80);
-    push(&myStack, 90);
-    push(&myStack, 100);
+    printf("DynamicArray capacity: %d: \n", Capacity(&dynamicArray));
+    printf("DynamicArray length: %d: \n", Count(&dynamicArray));
 
-    for (int i = 0; i < myStack.length; i++)
-    {
-        printf("Index: %d, value %d: \n", i, myStack.array[i]);
-    }
+    Add(&dynamicArray, 10);
+    Add(&dynamicArray, 20);
+    Add(&dynamicArray, 30);
+    Add(&dynamicArray, 40);
+    Add(&dynamicArray, 50);
 
-    printf("Pop: %d: \n", pop(&myStack));
-    printf("Pop: %d: \n", pop(&myStack));
-    printf("Peek: %d: \n", peek(&myStack));
-
-    for (int i = 0; i < myStack.length; i++)
-    {
-        printf("Index: %d, value %d: \n", i, myStack.array[i]);
-    }
+    printf("DynamicArray capacity after insertions: %d\n", Capacity(&dynamicArray));
+    printf("DynamicArray length after insertions: %d\n", Count(&dynamicArray));
  
   return 0;
 }
