@@ -19,7 +19,7 @@ SRCS = ./src/main.c ./src/functions.c ./src/math.c
 OBJS = $(SRCS:.c=.o)
 
 # Test source files
-TEST_SRCS = ./tests/test_math.c ./tests/unity.c ./src/math.c
+TEST_SRCS = ./tests/test_math.c ./src/math.c Path/unity.c
 
 # Test object files
 TEST_OBJS = $(TEST_SRCS:.c=.o)
