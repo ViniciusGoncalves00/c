@@ -1,0 +1,51 @@
+# Defines the compiler
+CC = gcc
+
+# Define flags to compiler
+CFLAGS = -I./include -Wall -I"C:/Path/Unity/src"
+LDFLAGS = -L"C:/Path/Unity/lib"
+
+
+# Executable name for the main program
+TARGET = c
+
+# Executable name for tests
+TEST_TARGET = test_math
+
+# Source files for the main program
+SRCS = ./src/main.c ./src/functions.c ./src/math.c
+
+# Object files (compiled files)
+OBJS = $(SRCS:.c=.o)
+
+# Test source files
+TEST_SRCS = ./tests/test_math.c ./tests/unity.c ./src/math.c
+
+# Test object files
+TEST_OBJS = $(TEST_SRCS:.c=.o)
+
+# Default rule: compile the main program
+all: $(TARGET)
+
+# How to create the main executable
+$(TARGET): $(OBJS)
+	$(CC) $(OBJS) -o $(TARGET)
+
+# Compile .c into .o files
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Compile and run tests
+test: $(TEST_TARGET)
+	./$(TEST_TARGET)
+
+# How to create the test executable
+$(TEST_TARGET): $(TEST_OBJS)
+	$(CC) $(TEST_OBJS) -o $(TEST_TARGET)
+
+# Clean object files and executables
+clean:
+	- del /F /Q src\*.o 2>nul
+	- del /F /Q tests\*.o 2>nul
+	- del /F /Q test_math 2>nul
+	- del /F /Q c 2>nul
