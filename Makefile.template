@@ -10,16 +10,16 @@ LDFLAGS = -L"C:/Path/Unity/lib"
 TARGET = c
 
 # Executable name for tests
-TEST_TARGET = test_math
+TEST_TARGET = test_mathlib
 
 # Source files for the main program
-SRCS = ./src/main.c ./src/functions.c ./src/math.c
+SRCS = ./src/main.c ./src/functions.c ./src/mathlib.c
 
 # Object files (compiled files)
 OBJS = $(SRCS:.c=.o)
 
 # Test source files
-TEST_SRCS = ./tests/test_math.c ./src/math.c Path/unity.c
+TEST_SRCS = ./tests/test_mathlib.c ./src/mathlib.c Path/unity.c
 
 # Test object files
 TEST_OBJS = $(TEST_SRCS:.c=.o)
@@ -47,5 +47,5 @@ $(TEST_TARGET): $(TEST_OBJS)
 clean:
 	- del /F /Q src\*.o 2>nul
 	- del /F /Q tests\*.o 2>nul
-	- del /F /Q test_math 2>nul
+	- del /F /Q test_mathlib 2>nul
 	- del /F /Q c 2>nul
