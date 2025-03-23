@@ -27,10 +27,19 @@ void test_floor() {
     TEST_ASSERT_EQUAL_INT(-3, custom_floor(-3));
 }
 
+void test_ceiling() {
+    TEST_ASSERT_EQUAL_INT(-1, custom_ceiling(-1.4));
+    TEST_ASSERT_EQUAL_INT(1, custom_ceiling(0.4));
+    TEST_ASSERT_EQUAL_INT(2, custom_ceiling(1.9999999));
+    TEST_ASSERT_EQUAL_INT(2, custom_ceiling(2));
+    TEST_ASSERT_EQUAL_INT(-3, custom_ceiling(-3));
+}
+
 int main() {
     UNITY_BEGIN();
     RUN_TEST(test_absolute);
     RUN_TEST(test_round);
     RUN_TEST(test_floor);
+    RUN_TEST(test_ceiling);
     return UNITY_END();
 }
