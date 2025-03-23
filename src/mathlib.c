@@ -55,3 +55,12 @@ float custom_min(float a, float b) {
         return b;
     }
 }
+
+float custom_max(float a, float b) {
+    if(a > b) {
+        return a;
+    }
+    else {
+        return b;
+    }
+}

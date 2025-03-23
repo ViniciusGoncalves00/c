@@ -50,6 +50,13 @@ void test_min() {
     TEST_ASSERT_EQUAL_FLOAT(INFINITY_NEGATIVE, custom_min(INFINITY_POSITIVE, INFINITY_NEGATIVE));
 }
 
+void test_max() {
+    TEST_ASSERT_EQUAL_FLOAT(10, custom_max(0, 10));
+    TEST_ASSERT_EQUAL_FLOAT(0, custom_max(-1, 0));
+    TEST_ASSERT_EQUAL_FLOAT(-2, custom_max(-5, -2));
+    TEST_ASSERT_EQUAL_FLOAT(INFINITY_POSITIVE, custom_max(INFINITY_POSITIVE, INFINITY_NEGATIVE));
+}
+
 int main() {
     UNITY_BEGIN();
     RUN_TEST(test_absolute);
@@ -58,5 +65,6 @@ int main() {
     RUN_TEST(test_ceiling);
     RUN_TEST(test_sign);
     RUN_TEST(test_min);
+    RUN_TEST(test_max);
     return UNITY_END();
 }
