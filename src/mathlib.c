@@ -46,3 +46,12 @@ int custom_sign(float a) {
         return 0;
     }
 }
+
+float custom_min(float a, float b) {
+    if(a < b) {
+        return a;
+    }
+    else {
+        return b;
+    }
+}

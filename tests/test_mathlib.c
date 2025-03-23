@@ -43,6 +43,13 @@ void test_sign() {
     TEST_ASSERT_EQUAL_INT(-1, custom_sign(INFINITY_NEGATIVE));
 }
 
+void test_min() {
+    TEST_ASSERT_EQUAL_FLOAT(0, custom_min(0, 10));
+    TEST_ASSERT_EQUAL_FLOAT(-1, custom_min(-1, 0));
+    TEST_ASSERT_EQUAL_FLOAT(-5, custom_min(-5, -2));
+    TEST_ASSERT_EQUAL_FLOAT(INFINITY_NEGATIVE, custom_min(INFINITY_POSITIVE, INFINITY_NEGATIVE));
+}
+
 int main() {
     UNITY_BEGIN();
     RUN_TEST(test_absolute);
@@ -50,5 +57,6 @@ int main() {
     RUN_TEST(test_floor);
     RUN_TEST(test_ceiling);
     RUN_TEST(test_sign);
+    RUN_TEST(test_min);
     return UNITY_END();
 }

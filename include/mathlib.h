@@ -9,5 +9,6 @@ int custom_round(float a);
 int custom_floor(float a);
 int custom_ceiling(float a);
 int custom_sign(float a);
+float custom_min(float a, float b);
 
 #endif
