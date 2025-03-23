@@ -35,11 +35,20 @@ void test_ceiling() {
     TEST_ASSERT_EQUAL_INT(-3, custom_ceiling(-3));
 }
 
+void test_sign() {
+    TEST_ASSERT_EQUAL_INT(1, custom_sign(10));
+    TEST_ASSERT_EQUAL_INT(0, custom_sign(0));
+    TEST_ASSERT_EQUAL_INT(-1, custom_sign(-10));
+    TEST_ASSERT_EQUAL_INT(1, custom_sign(INFINITY_POSITIVE));
+    TEST_ASSERT_EQUAL_INT(-1, custom_sign(INFINITY_NEGATIVE));
+}
+
 int main() {
     UNITY_BEGIN();
     RUN_TEST(test_absolute);
     RUN_TEST(test_round);
     RUN_TEST(test_floor);
     RUN_TEST(test_ceiling);
+    RUN_TEST(test_sign);
     return UNITY_END();
 }

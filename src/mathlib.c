@@ -1,5 +1,8 @@
 #include "mathlib.h"
 
+double const INFINITY_POSITIVE = 1.0 / 0.0;
+double const INFINITY_NEGATIVE = -1.0 / 0.0;
+
 int custom_absolute(int a) {
     if(a < 0) {
         a *= -1;
@@ -31,5 +34,15 @@ int custom_ceiling(float a) {
         return (int)a + 1;
     } else {
         return (int)a;
+    }
+}
+
+int custom_sign(float a) {
+    if (a > 0.0) {
+        return 1;
+    } else if (a < 0.0) {
+        return -1;
+    } else {
+        return 0;
     }
 }
