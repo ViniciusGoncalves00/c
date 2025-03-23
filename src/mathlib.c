@@ -17,3 +17,15 @@ int custom_round(float a) {
         return (int)a;
     }
 }
+
+int custom_floor(float a) {
+    if (a - (int)a < 0) {
+        return (int)a - 1;
+    } else {
+        return (int)a;
+    }
+}
+
+int custom_ceiling(float a) {
+    return (int)a + 1;
+}
