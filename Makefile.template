@@ -19,7 +19,7 @@ SRCS = ./src/main.c ./src/functions.c ./src/mathlib.c ./src/geometry.c
 OBJS = $(SRCS:.c=.o)
 
 # Test source files
-TEST_SRCS = ./tests/test_mathlib.c ./src/mathlib.c ./tests/test_geometry.c ./src/geometry.c Path/unity.c
+TEST_SRCS = ./tests/tests.c ./tests/test_mathlib.c ./src/mathlib.c ./tests/test_geometry.c ./src/geometry.c Path/unity.c
 
 # Test object files
 TEST_OBJS = $(TEST_SRCS:.c=.o)

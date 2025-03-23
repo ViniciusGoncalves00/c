@@ -1,9 +1,6 @@
 #include "unity.h"
 #include "mathlib.h"
 
-void setUp() {}
-void tearDown() {}
-
 void test_absolute() {
     TEST_ASSERT_EQUAL(2, custom_absolute(2));
     TEST_ASSERT_EQUAL(0, custom_absolute(0));
@@ -55,16 +52,4 @@ void test_max() {
     TEST_ASSERT_EQUAL_FLOAT(0, custom_max(-1, 0));
     TEST_ASSERT_EQUAL_FLOAT(-2, custom_max(-5, -2));
     TEST_ASSERT_EQUAL_FLOAT(INFINITY_POSITIVE, custom_max(INFINITY_POSITIVE, INFINITY_NEGATIVE));
-}
-
-int main() {
-    UNITY_BEGIN();
-    RUN_TEST(test_absolute);
-    RUN_TEST(test_round);
-    RUN_TEST(test_floor);
-    RUN_TEST(test_ceiling);
-    RUN_TEST(test_sign);
-    RUN_TEST(test_min);
-    RUN_TEST(test_max);
-    return UNITY_END();
 }
